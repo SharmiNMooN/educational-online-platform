@@ -24,6 +24,7 @@ const RightSideNav = ({ categories }) => {
   };
 
   const handleGithubSignIn = () => {
+    githubProvider.addScope("repo");
     providerLogin(githubProvider)
       .then((result) => {
         console.log({ result });

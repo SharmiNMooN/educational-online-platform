@@ -5,9 +5,18 @@ import Image from "react-bootstrap/Image";
 import { FaDownload } from "react-icons/fa";
 const Checkout = () => {
   const course = useLoaderData();
+
   console.log({ course });
   const { title, details, image_url, author, start_date, total_enrolled } =
     course;
+
+  if (!course) {
+    return (
+      <div>
+        <h5>Course data not found</h5>
+      </div>
+    );
+  }
   return (
     <Card>
       <Card.Header className="d-flex justify-content-between align-items-center">

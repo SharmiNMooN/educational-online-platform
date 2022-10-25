@@ -97,10 +97,15 @@ const Register = () => {
           }
         />
       </Form.Group>
-      <Button variant="primary" type="submit" disabled={!accepted}>
+      <Button
+        className="me-2"
+        variant="primary"
+        type="submit"
+        disabled={!accepted}
+      >
         Register
       </Button>
-      <Form.Text className="text-danger">{error}</Form.Text>
+      <Form.Text className="text-danger me-2">{error}</Form.Text>
       <Button variant="info">
         <Link to="/login">Login</Link>
       </Button>

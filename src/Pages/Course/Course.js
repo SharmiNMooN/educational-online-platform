@@ -3,7 +3,7 @@ import { Link, useLoaderData } from "react-router-dom";
 import Card from "react-bootstrap/Card";
 import Button from "react-bootstrap/Button";
 import Image from "react-bootstrap/Image";
-import { FaRegBookmark, FaShareAlt } from "react-icons/fa";
+import { FaDownload } from "react-icons/fa";
 const Course = () => {
   const course = useLoaderData();
   console.log({ course });
@@ -24,8 +24,9 @@ const Course = () => {
           </div>
         </div>
         <div>
-          <FaRegBookmark className="me-2"></FaRegBookmark>
-          <FaShareAlt></FaShareAlt>
+          <Link>
+            <FaDownload className="me-2"></FaDownload>
+          </Link>
         </div>
       </Card.Header>
       <Card.Img variant="top" src={image_url} />
