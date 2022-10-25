@@ -6,12 +6,18 @@ export const routes = createBrowserRouter([
   {
     path: "/",
     element: <Main></Main>,
+    loader: () =>
+      fetch(
+        "https://sikkhayon-academy-server-sharminmoon.vercel.app/course-categories"
+      ),
     children: [
       {
         path: "/",
         element: <Home></Home>,
         loader: () =>
-          fetch("https://sikkhayon-academy-server.vercel.app/courses"),
+          fetch(
+            "https://sikkhayon-academy-server-sharminmoon.vercel.app/courses"
+          ),
       },
     ],
   },

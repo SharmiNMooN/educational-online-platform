@@ -2,10 +2,12 @@ import React from "react";
 import { Outlet } from "react-router-dom";
 
 import { Col, Container, Row } from "react-bootstrap";
+import { useLoaderData } from "react-router-dom";
 import Header from "../Pages/Shared/Header/Header";
 import RightSideNav from "../Pages/Shared/RightSideNav/RightSideNav";
 
 const Main = () => {
+  const AllCategories = useLoaderData();
   return (
     <div>
       <Header></Header>
@@ -15,7 +17,7 @@ const Main = () => {
             <Outlet></Outlet>
           </Col>
           <Col lg="3">
-            <RightSideNav></RightSideNav>
+            <RightSideNav categories={AllCategories}></RightSideNav>
           </Col>
         </Row>
       </Container>

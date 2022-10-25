@@ -1,15 +1,20 @@
 import React from "react";
 import { useLoaderData } from "react-router-dom";
-// import NewsSummaryCard from "../../Shared/NewsSummaryCard/NewsSummaryCard";
-
+import CourseCard from "../Shared/CourseCard/CourseCard";
+import { Col, Row } from "react-bootstrap";
 const Home = () => {
-  const allNews = useLoaderData();
+  const AllCourses = useLoaderData();
   return (
     <div>
-      <h2>Dragon News Home: {allNews.length}</h2>
-      {/* {allNews.map((news) => (
-        <NewsSummaryCard key={news._id} news={news}></NewsSummaryCard>
-      ))} */}
+      <h2>Total Courses: {AllCourses.length}</h2>
+
+      <Row>
+        {AllCourses.map((course) => (
+          <Col lg="6">
+            <CourseCard key={course.id} course={course}></CourseCard>
+          </Col>
+        ))}
+      </Row>
     </div>
   );
 };
