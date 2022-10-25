@@ -1,7 +1,9 @@
 import { createBrowserRouter } from "react-router-dom";
 import Main from "../../layout/Main";
+import Course from "../../Pages/Course/Course";
+import Courses from "../../Pages/Courses/Courses";
 import Home from "../../Pages/Home/Home";
-
+import PrivateRoute from "../PrivateRoute/PrivateRoute";
 export const routes = createBrowserRouter([
   {
     path: "/",
@@ -17,6 +19,34 @@ export const routes = createBrowserRouter([
         loader: () =>
           fetch(
             "https://sikkhayon-academy-server-sharminmoon.vercel.app/courses"
+          ),
+      },
+      {
+        path: "/courses",
+        element: <Home></Home>,
+        loader: () =>
+          fetch(
+            "https://sikkhayon-academy-server-sharminmoon.vercel.app/courses"
+          ),
+      },
+      {
+        path: "/courses/:id",
+        element: (
+          <PrivateRoute>
+            <Course></Course>
+          </PrivateRoute>
+        ),
+        loader: ({ params }) =>
+          fetch(
+            `https://sikkhayon-academy-server-sharminmoon.vercel.app/courses/${params.id}`
+          ),
+      },
+      {
+        path: "/categories/:id",
+        element: <Courses></Courses>,
+        loader: ({ params }) =>
+          fetch(
+            `https://sikkhayon-academy-server-sharminmoon.vercel.app/category-wise-course/${params.id}`
           ),
       },
     ],

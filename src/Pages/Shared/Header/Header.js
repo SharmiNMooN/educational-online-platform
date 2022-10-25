@@ -5,8 +5,16 @@ import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import { FaUser, FaBookReader } from "react-icons/fa";
 import { Link } from "react-router-dom";
-
+import { AuthContext } from "../../../contexts/AuthProvider/AuthProvider";
+import Button from "react-bootstrap/Button";
 const Header = () => {
+  const { user, logOut } = useContext(AuthContext);
+
+  const handleLogOut = () => {
+    logOut()
+      .then(() => {})
+      .catch((error) => console.error(error));
+  };
   return (
     <Navbar
       collapseOnSelect
@@ -30,15 +38,32 @@ const Header = () => {
             <Nav.Link href="/blog">Blog</Nav.Link>
           </Nav>
           <Nav>
+            <Link to="/profile">
+              {user?.photoURL ? (
+                <Image
+                  style={{ height: "30px" }}
+                  roundedCircle
+                  src={user?.photoURL}
+                ></Image>
+              ) : (
+                <FaUser></FaUser>
+              )}
+            </Link>
             <>
-              {
+              {user?.uid ? (
+                <>
+                  <Button variant="light">{user?.displayName}</Button>
+                  <Button variant="light" onClick={handleLogOut}>
+                    Log out
+                  </Button>
+                </>
+              ) : (
                 <>
                   <Link to="/login">Login</Link>
                   <Link to="/register">Register</Link>
                 </>
-              }
+              )}
             </>
-            <Link to="/profile">{<FaUser></FaUser>}</Link>
           </Nav>
         </Navbar.Collapse>
       </Container>
