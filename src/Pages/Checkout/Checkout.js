@@ -1,13 +1,13 @@
 import React from "react";
 import { Link, useLoaderData } from "react-router-dom";
 import Card from "react-bootstrap/Card";
-import Button from "react-bootstrap/Button";
 import Image from "react-bootstrap/Image";
-import { FaRegBookmark, FaShareAlt } from "react-icons/fa";
-const Course = () => {
+import { FaDownload } from "react-icons/fa";
+const Checkout = () => {
   const course = useLoaderData();
   console.log({ course });
-  const { title, details, image_url, author, start_date, id } = course;
+  const { title, details, image_url, author, start_date, total_enrolled } =
+    course;
   return (
     <Card>
       <Card.Header className="d-flex justify-content-between align-items-center">
@@ -24,20 +24,26 @@ const Course = () => {
           </div>
         </div>
         <div>
-          <FaRegBookmark className="me-2"></FaRegBookmark>
-          <FaShareAlt></FaShareAlt>
+          <Link>
+            <FaDownload className="me-2"></FaDownload>
+          </Link>
         </div>
       </Card.Header>
-      <Card.Img variant="top" src={image_url} />
+      <Card.Img variant="top" src={image_url} style={{ height: "320px" }} />
       <Card.Body>
         <Card.Title>{title}</Card.Title>
         <Card.Text>{details}</Card.Text>
-        <Link to={`/checkout/${id}`}>
-          <Button variant="primary">Get premium access</Button>
-        </Link>
       </Card.Body>
+      <Card.Footer className="d-flex justify-content-between">
+        <div>Duration: {course.duration}</div>
+        <div>Price: {course.price}/- tk</div>
+        <div>
+          Total enrolled:
+          <span>{total_enrolled ?? 0}</span>
+        </div>
+      </Card.Footer>
     </Card>
   );
 };
 
-export default Course;
+export default Checkout;

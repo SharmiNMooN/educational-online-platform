@@ -2,7 +2,7 @@ import React from "react";
 import Card from "react-bootstrap/Card";
 import { Link } from "react-router-dom";
 import Image from "react-bootstrap/Image";
-import { FaRegBookmark, FaShareAlt, FaStar } from "react-icons/fa";
+import { FaStar } from "react-icons/fa";
 
 const CourseCard = ({ course }) => {
   console.log(course);
@@ -29,12 +29,12 @@ const CourseCard = ({ course }) => {
           ></Image>
           <div>
             <p className="mb-0">Instructor: {author?.name}</p>
-            <p>Course Start at: {start_date}</p>
+            <p>Course Start at: {new Date(start_date).toLocaleDateString()}</p>
           </div>
         </div>
         <div>
-          <FaRegBookmark className="me-2"></FaRegBookmark>
-          <FaShareAlt></FaShareAlt>
+          Rating: <FaStar className="text-warning me-2"></FaStar>
+          <span>{rating?.number}</span>
         </div>
       </Card.Header>
       <Card.Body>
@@ -56,10 +56,7 @@ const CourseCard = ({ course }) => {
         </Card.Text>
       </Card.Body>
       <Card.Footer className="d-flex justify-content-between">
-        <div>
-          <FaStar className="text-warning me-2"></FaStar>
-          <span>{rating?.number}</span>
-        </div>
+        <div>Price: {course.price}/- tk</div>
         <div>
           Total enrolled:
           <span>{total_enrolled ?? 0}</span>
