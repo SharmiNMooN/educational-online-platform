@@ -41,7 +41,7 @@ const CourseCard = ({ course }) => {
         <Card.Title>{title}</Card.Title>
         <Card.Img
           variant="top"
-          style={{ "max-height": "200px" }}
+          style={{ maxHeight: "200px" }}
           src={image_url}
         />
         <Card.Text>

@@ -4,11 +4,23 @@ import ButtonGroup from "react-bootstrap/ButtonGroup";
 import { FaGoogle, FaGithub, FaBook } from "react-icons/fa";
 import ListGroup from "react-bootstrap/ListGroup";
 import { Link } from "react-router-dom";
+import { AuthContext } from "../../../contexts/AuthProvider/AuthProvider";
+import { GoogleAuthProvider } from "firebase/auth";
 
 const RightSideNav = ({ categories }) => {
   console.log({ categories });
+  const { providerLogin } = useContext(AuthContext);
 
-  const handleGoogleSignIn = () => {};
+  const googleProvider = new GoogleAuthProvider();
+
+  const handleGoogleSignIn = () => {
+    providerLogin(googleProvider)
+      .then((result) => {
+        const user = result.user;
+        console.log(user);
+      })
+      .catch((error) => console.error(error));
+  };
 
   return (
     <div>
