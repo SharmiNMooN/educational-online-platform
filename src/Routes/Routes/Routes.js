@@ -1,5 +1,6 @@
 import { createBrowserRouter } from "react-router-dom";
 import Main from "../../layout/Main";
+import Login from "../../Pages/Auth/Login/Login";
 import Course from "../../Pages/Course/Course";
 import Courses from "../../Pages/Courses/Courses";
 import Home from "../../Pages/Home/Home";
@@ -48,6 +49,10 @@ export const routes = createBrowserRouter([
           fetch(
             `https://sikkhayon-academy-server-sharminmoon.vercel.app/category-wise-course/${params.id}`
           ),
+      },
+      {
+        path: "/login",
+        element: <Login></Login>,
       },
     ],
   },
