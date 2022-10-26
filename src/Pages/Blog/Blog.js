@@ -1,6 +1,6 @@
 const Blog = () => {
   return (
-    <div className="container mt-4 ">
+    <div className="container bg-light  mt-4 ">
       <div className="card mb-3">
         <div className="card-header">
           <b>Q:1. What is CORS?</b>

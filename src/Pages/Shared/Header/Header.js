@@ -25,25 +25,26 @@ const Header = () => {
       expand="lg"
       bg="light"
       variant="light"
+
     >
       <Container>
         <Navbar.Brand>
           <Link className="me-3" to="/">
-            {<FaBookReader></FaBookReader>}
+            {<FaBookReader size={30}></FaBookReader>}
           </Link>
           <Link to="/">Sikkhayon Academy</Link>
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
-          <Nav className="me-auto">
-            <Nav.Link href="/courses">Courses</Nav.Link>
-            <Nav.Link href="/faq">FAQ</Nav.Link>
-            <Nav.Link href="/blog">Blog</Nav.Link>
+          <Nav variant="pills"  className="me-auto" >
+            <Nav.Item ><Nav.Link eventKey="/courses" ><Link className=" text-dark" to="/courses">Courses</Link></Nav.Link></Nav.Item>
+            <Nav.Item><Nav.Link eventKey="/faq" ><Link className=" text-dark" to="/faq">FAQ</Link></Nav.Link></Nav.Item>
+            <Nav.Item><Nav.Link eventKey="/blog" ><Link className=" text-dark" to="/blog">Blog</Link></Nav.Link></Nav.Item>
           </Nav>
           <Nav>
-            <p className="me-2">
+            <div className="me-2">
               <BootstrapSwitchButton  checked={true} size="sm" onlabel="Light" offlabel="Dark" width="30px" onstyle="info" offstyle="dark" style="border" />
-            </p>
+            </div>
             <>
               {user?.uid ? (
                 <>

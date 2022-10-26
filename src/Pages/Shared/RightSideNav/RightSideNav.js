@@ -1,7 +1,6 @@
 import React from "react";
-import { FaBook } from "react-icons/fa";
 import ListGroup from "react-bootstrap/ListGroup";
-import { Link } from "react-router-dom";
+import Category from "../../Category/Category";
 
 const RightSideNav = ({ categories }) => {
   return (
@@ -10,12 +9,7 @@ const RightSideNav = ({ categories }) => {
         <h5 className="text-center">Course Categories</h5>
         <ListGroup>
           {categories?.map((category, index) => (
-            <ListGroup.Item className="mb-2">
-              <Link to={`categories/${category.id}`}>
-                <FaBook className="me-2" />
-                {category.name}
-              </Link>
-            </ListGroup.Item>
+            <Category category={category} key={category.id}></Category>
           ))}
         </ListGroup>
       </div>
