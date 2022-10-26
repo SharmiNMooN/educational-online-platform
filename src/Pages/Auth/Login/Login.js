@@ -71,48 +71,63 @@ const Login = () => {
   };
 
   return (
-    <div>
-      <Form onSubmit={handleSubmit}>
-        <Form.Group className="mb-3" controlId="formBasicEmail">
+    <div className="bg-primary w-60 ">
+      <h1 className="text-center text-white">Sign In</h1>
+      <Form onSubmit={handleSubmit} className="w-50 m-auto">
+        <Form.Group
+          className="me-6 mb-4 text-white m-4 "
+          controlId="formBasicEmail"
+        >
           <Form.Label>Email address</Form.Label>
           <Form.Control
             name="email"
             type="email"
+            className="border border-dark"
             placeholder="Enter email"
             required
           />
         </Form.Group>
 
-        <Form.Group className="mb-3" controlId="formBasicPassword">
+        <Form.Group
+          className="me-6 mb-4 text-white m-4 "
+          controlId="formBasicPassword"
+        >
           <Form.Label>Password</Form.Label>
           <Form.Control
             name="password"
             type="password"
             placeholder="Password"
+            className="border border-dark"
             required
           />
         </Form.Group>
 
-        <Button variant="primary" className="me-2" type="submit">
-          Login
-        </Button>
-        <Form.Text className="text-danger me-2">{error}</Form.Text>
-        <Button variant="info">
-          <Link to="/register">Register</Link>
-        </Button>
+        <div className="text-center">
+          <Button
+            variant="light"
+            className="me-2 m-4 border border-dark"
+            type="submit"
+          >
+            Login
+          </Button>
+          <Form.Text className="text-danger me-4">{error}</Form.Text>
+          <Button variant="warning" className="border border-dark">
+            <Link to="/register">Register</Link>
+          </Button>
+        </div>
       </Form>
       <div className="text-center">
-        <h5>Social login</h5>
+        <h5 className="text-white">Social login</h5>
         <ButtonGroup vertical>
           <Button
             onClick={handleGoogleSignIn}
-            className="mb-2"
-            variant="outline-primary"
+            className=""
+            variant="outline-light"
           >
             {" "}
             <FaGoogle></FaGoogle> Login with Google
           </Button>
-          <Button onClick={handleGithubSignIn} variant="outline-dark">
+          <Button onClick={handleGithubSignIn} variant="outline-light mb-4">
             {" "}
             <FaGithub></FaGithub> Login with Github
           </Button>
