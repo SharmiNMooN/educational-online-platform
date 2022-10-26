@@ -1,8 +1,7 @@
 import React from "react";
-import { Link, useLoaderData } from "react-router-dom";
+import { useLoaderData } from "react-router-dom";
 import Card from "react-bootstrap/Card";
 import Image from "react-bootstrap/Image";
-import { FaDownload } from "react-icons/fa";
 const Checkout = () => {
   const course = useLoaderData();
 
@@ -33,9 +32,7 @@ const Checkout = () => {
           </div>
         </div>
         <div>
-          <Link>
-            <FaDownload className="me-2"></FaDownload>
-          </Link>
+
         </div>
       </Card.Header>
       <Card.Img variant="top" src={image_url} style={{ height: "320px" }} />

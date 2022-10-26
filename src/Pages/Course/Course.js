@@ -4,12 +4,13 @@ import Card from "react-bootstrap/Card";
 import Button from "react-bootstrap/Button";
 import Image from "react-bootstrap/Image";
 import { FaDownload } from "react-icons/fa";
+import ReactToPdf from 'react-to-pdf';
 const Course = () => {
   const course = useLoaderData();
-  console.log({ course });
+  const ref = React.createRef();
   const { title, details, image_url, author, start_date, id } = course;
   return (
-    <Card>
+    <Card ref={ref}>
       <Card.Header className="d-flex justify-content-between align-items-center">
         <div className="d-flex">
           <Image
@@ -24,9 +25,13 @@ const Course = () => {
           </div>
         </div>
         <div>
-          <Link>
-            <FaDownload className="me-2"></FaDownload>
-          </Link>
+          <ReactToPdf targetRef={ref} filename={`${title}-details.pdf`}  x={.5} y={.5} scale={0.8}>
+            {({toPdf}) => (
+                <Link onClick={toPdf}>
+                  <FaDownload className="me-2"></FaDownload>
+                </Link>
+            )}
+          </ReactToPdf>
         </div>
       </Card.Header>
       <Card.Img variant="top" src={image_url} />
