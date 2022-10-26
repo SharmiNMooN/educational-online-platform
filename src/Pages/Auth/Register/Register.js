@@ -115,12 +115,13 @@ const Register = () => {
         >
           Register
         </Button>
-        <Form.Text className=" mb-4 text-danger align-item-center me-2">
-          {error}
-        </Form.Text>
+
         <Button className="mb-4 align-item-end" variant="warning">
           <Link to="/login">Login</Link>
         </Button>
+        <Form.Text className=" mb-4 text-danger align-item-center me-2">
+          {error}
+        </Form.Text>
       </Form>
     </Container>
   );

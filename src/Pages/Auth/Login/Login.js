@@ -110,10 +110,11 @@ const Login = () => {
           >
             Login
           </Button>
-          <Form.Text className="text-danger me-4">{error}</Form.Text>
+
           <Button variant="warning" className="border border-dark">
             <Link to="/register">Register</Link>
           </Button>
+            <Form.Text className="text-danger me-4">{error}</Form.Text>
         </div>
       </Form>
       <div className="text-center">

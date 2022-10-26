@@ -6,6 +6,7 @@ import Navbar from "react-bootstrap/Navbar";
 import { FaUser, FaBookReader } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../../../contexts/AuthProvider/AuthProvider";
+import ReactTooltip from 'react-tooltip';
 import Button from "react-bootstrap/Button";
 const Header = () => {
   const { user, logOut } = useContext(AuthContext);
@@ -38,21 +39,22 @@ const Header = () => {
             <Nav.Link href="/blog">Blog</Nav.Link>
           </Nav>
           <Nav>
-            <Link to="/profile">
-              {user?.photoURL ? (
-                <Image
-                  style={{ height: "30px" }}
-                  roundedCircle
-                  src={user?.photoURL}
-                ></Image>
-              ) : (
-                <FaUser></FaUser>
-              )}
-            </Link>
             <>
               {user?.uid ? (
                 <>
-                  <Button variant="light">{user?.displayName}</Button>
+                  <Link to="/profile">
+                    {user?.photoURL ? (
+                        <Image
+                            style={{ height: "30px" }}
+                            data-tip={user?.displayName}
+                            roundedCircle
+                            src={user?.photoURL}
+                        ></Image>
+                    ) : (
+                        <FaUser></FaUser>
+                    )}
+                  </Link>
+                  <ReactTooltip />
                   <Button variant="light" onClick={handleLogOut}>
                     Log out
                   </Button>
