@@ -6,6 +6,7 @@ import Checkout from "../../Pages/Checkout/Checkout";
 import Course from "../../Pages/Course/Course";
 import Courses from "../../Pages/Courses/Courses";
 import Home from "../../Pages/Home/Home";
+import NotFound from "../../Pages/Shared/Pages/NotFound";
 import PrivateRoute from "../PrivateRoute/PrivateRoute";
 export const routes = createBrowserRouter([
   {
@@ -68,6 +69,10 @@ export const routes = createBrowserRouter([
       {
         path: "/register",
         element: <Register></Register>,
+      },
+      {
+        path: "*",
+        element: <NotFound></NotFound>,
       },
     ],
   },
