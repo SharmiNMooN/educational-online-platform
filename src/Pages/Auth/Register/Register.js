@@ -66,17 +66,18 @@ const Register = () => {
         <Form.Group className="text-white my-4 " controlId="formBasicEmail">
 
           <Form.Label>Your Full Name</Form.Label>
-          <Form.Control name="name" type="text" placeholder="Your Full Name" />
+          <Form.Control name="name" type="text" className="border-4 border-dark" placeholder="Your Full Name" />
         </Form.Group>
-        <Form.Group className="text-white my-4" controlId="formBasicEmail">
+        <Form.Group className="text-white my-4"  controlId="formBasicEmail">
           <Form.Label>Photo URL</Form.Label>
-          <Form.Control name="photoURL" type="text" placeholder="Phot URL" />
+          <Form.Control name="photoURL" type="text" className="border-4 border-dark" placeholder="Phot URL" />
         </Form.Group>
 
         <Form.Group className="text-white my-4" controlId="formBasicEmail">
           <Form.Label>Email address</Form.Label>
           <Form.Control
             name="email"
+            className="border-4 border-dark"
             type="email"
             placeholder="Enter email"
             required
@@ -88,6 +89,7 @@ const Register = () => {
           <Form.Control
             name="password"
             type="password"
+            className="border-4 border-dark"
             placeholder="Password"
             required
           />
@@ -102,13 +104,13 @@ const Register = () => {
             label={
               <>
                 I agree all statements in{" "}
-                <Link to="/terms"> Terms of service</Link>
+                <Link to="/terms" className="text-dark"> Terms of service</Link>
               </>
             }
           />
         </Form.Group>
         <Button
-          className="mb-4 align-item-start"
+          className="mb-4 me-2 align-item-start"
           variant="light"
           type="submit"
           disabled={!accepted}

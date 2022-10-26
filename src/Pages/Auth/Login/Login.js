@@ -82,7 +82,7 @@ const Login = () => {
           <Form.Control
             name="email"
             type="email"
-            className="border border-dark"
+            className="border-4 border-dark"
             placeholder="Enter email"
             required
           />
@@ -97,7 +97,7 @@ const Login = () => {
             name="password"
             type="password"
             placeholder="Password"
-            className="border border-dark"
+            className="border-4 border-dark"
             required
           />
         </Form.Group>
@@ -105,13 +105,13 @@ const Login = () => {
         <div className="text-center">
           <Button
             variant="light"
-            className="me-2 m-4 border border-dark"
+            className="me-2 m-4 border-4 border-dark"
             type="submit"
           >
             Login
           </Button>
 
-          <Button variant="warning" className="border border-dark">
+          <Button variant="warning" className="border-4 border-dark">
             <Link to="/register">Register</Link>
           </Button>
             <Form.Text className="text-danger me-4">{error}</Form.Text>

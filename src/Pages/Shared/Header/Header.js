@@ -8,6 +8,8 @@ import { Link } from "react-router-dom";
 import { AuthContext } from "../../../contexts/AuthProvider/AuthProvider";
 import ReactTooltip from 'react-tooltip';
 import Button from "react-bootstrap/Button";
+import BootstrapSwitchButton from "bootstrap-switch-button-react";
+
 const Header = () => {
   const { user, logOut } = useContext(AuthContext);
 
@@ -39,10 +41,13 @@ const Header = () => {
             <Nav.Link href="/blog">Blog</Nav.Link>
           </Nav>
           <Nav>
+            <p className="me-2">
+              <BootstrapSwitchButton  checked={true} size="sm" onlabel="Light" offlabel="Dark" width="30px" onstyle="info" offstyle="dark" style="border" />
+            </p>
             <>
               {user?.uid ? (
                 <>
-                  <Link to="/profile">
+                  <Link to="/profile"  className="me-2">
                     {user?.photoURL ? (
                         <Image
                             style={{ height: "30px" }}

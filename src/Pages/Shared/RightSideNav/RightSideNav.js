@@ -7,7 +7,7 @@ const RightSideNav = ({ categories }) => {
   return (
     <div>
       <div className="mt-4">
-        <h5>Course Categories</h5>
+        <h5 className="text-center">Course Categories</h5>
         <ListGroup>
           {categories?.map((category, index) => (
             <ListGroup.Item className="mb-2">
