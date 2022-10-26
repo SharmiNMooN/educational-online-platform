@@ -1,10 +1,10 @@
-import React, { useContext } from "react";
+import React, {useContext, useEffect, useState} from "react";
 import { Image } from "react-bootstrap";
 import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import { FaUser, FaBookReader } from "react-icons/fa";
-import { Link } from "react-router-dom";
+import {Link, useLocation} from "react-router-dom";
 import { AuthContext } from "../../../contexts/AuthProvider/AuthProvider";
 import ReactTooltip from 'react-tooltip';
 import Button from "react-bootstrap/Button";
@@ -12,12 +12,20 @@ import BootstrapSwitchButton from "bootstrap-switch-button-react";
 
 const Header = () => {
   const { user, logOut } = useContext(AuthContext);
+  const location = useLocation();
+  const [currentState, setCurrentState] = useState('')
 
   const handleLogOut = () => {
     logOut()
       .then(() => {})
       .catch((error) => console.error(error));
   };
+
+  useEffect(() => {
+    console.log(`location.pathname`, location.pathname);
+    setCurrentState(location.pathname);
+    console.log({currentState})
+  });
   return (
     <Navbar
       collapseOnSelect
@@ -67,10 +75,10 @@ const Header = () => {
                 </>
               ) : (
                 <>
-                  <Link className="me-2" to="/login">
+                  <Link className={`me-2 ${currentState === '/login' ? 'd-none': ''}`}  to="/login">
                     Login
                   </Link>
-                  <Link to="/register">Register</Link>
+                  <Link className={`${currentState === '/login' ? '' : 'd-none'}`} to="/register">Register</Link>
                 </>
               )}
             </>
