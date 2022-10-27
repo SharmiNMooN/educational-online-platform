@@ -23,7 +23,7 @@ const Blog = () => {
             used to tackle CORS errors in a Node.js application.
           </p>
           <br />
-          Let’s understand using an example: As the CORS package is available in
+          Let's understand using an example: As the CORS package is available in
           npm(node package manager) that Node.js third-party package, we must
           have Node.js installed in our local system. To verify type the
           following command in the terminal. "node -v"
@@ -41,18 +41,10 @@ const Blog = () => {
           <h5 className="card-title">Ans:</h5>
           <p className="card-text">
             <b>Using Firebase:</b>
-            Everything can be made useful if you use your mind, can’t it be?
-            Like the machine is doing with the men. Similarly, Firebase is used
-            for many purposes that can help your apps to develop, grow and make
-            it a quality app. Moreover, Firebase is made with a developer in
-            mind to solve all the issues they might face when making an app.
-            Firebase is a web app development platform created by Google. It
-            lets you develop the whole app on the front-end without any
-            server-side code. At the same time, it does let you set up some
-            server-side logic via Firebase Functions if you need to react to
-            certain events (creation of data or files, login, https requests) so
-            you can send emails or push notifications or process the data after
-            it is written.
+            Firebase provides tools to grow your app and business, for startups
+            & global enterprises. Get your app up and running quickly & securely
+            with fully managed backend infrastructure. Release Apps Confidently.
+            Cross-Platform Solutions. Monitor App Performance.
             <br />
             <b>Other options to implement authentication:</b>
             It provides backend services, easy-to-use SDKs, and ready-made UI
@@ -124,17 +116,22 @@ const Blog = () => {
             it is so prevalent in web development.
             <br />
             <b>How does Node.js work?</b>
-            There are many reasons for which we prefer using NodeJs for the
-            server side of our application, some of them are discussed in the
-            following:
+            NodeJs is built on Google Chrome's V8 engine, and for this reason
+            its execution time is very fast and it runs very quickly. It is a
+            used as backend service where javascript works on the server-side of
+            the application. This way javascript is used on both frontend and
+            backend. Chrome v8 engine which converts javascript code into
+            machine code, it is highly scalable, lightweight, fast, and
+            data-intensive.
             <br />
-            NodeJs is built on Google Chrome’s V8 engine, and for this reason
-            its execution time is very fast and it runs very quickly.
-            <br />
-            There are more than 50,000 bundles available in the Node Package
-            Manager and for that reason developers can import any of the
-            packages any time according to their needed functionality for which
-            a lot of time is saved.
+            Node.js accepts the request from the clients and sends the response,
+            while working with the request node.js handles them with a single
+            thread. To operate I/O operations or requests node.js use the
+            concept of threads. Thread is a sequence of instructions that the
+            server needs to perform. It runs parallel on the server to provide
+            the information to multiple clients. Node.js is an event loop
+            single-threaded language. It can handle concurrent requests with a
+            single thread without blocking it for one request.
             <br />
             As NodeJs do not need to wait for an API to return data , so for
             building real time and data intensive web applications, it is very
