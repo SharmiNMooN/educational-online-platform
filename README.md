@@ -11,7 +11,7 @@
 - Can download course details as PDF
 - Category wise courses
 - User can checkout course
-- Responsive design
+- Responsive design for mobile, tablet and desktop
 - User friendly application
 
 ### Framework and Libraries

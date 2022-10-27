@@ -10,7 +10,7 @@ const Courses = () => {
 
       <Row>
         {CategoryCourses.map((course) => (
-          <Col lg="6">
+          <Col sx={12} sm={12} md={6} lg={6}>
             <CourseCard key={course.id} course={course}></CourseCard>
           </Col>
         ))}

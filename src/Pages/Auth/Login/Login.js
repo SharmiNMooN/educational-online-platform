@@ -73,9 +73,9 @@ const Login = () => {
   return (
     <div className="bg-primary w-60 ">
       <h1 className="text-center text-white">Sign In</h1>
-      <Form onSubmit={handleSubmit} className="w-50 m-auto">
+      <Form onSubmit={handleSubmit} className="w-50 w-sm-100 m-auto">
         <Form.Group
-          className="me-6 mb-4 text-white m-4 "
+          className="mb-4 text-white"
           controlId="formBasicEmail"
         >
           <Form.Label>Email address</Form.Label>
@@ -89,7 +89,7 @@ const Login = () => {
         </Form.Group>
 
         <Form.Group
-          className="me-6 mb-4 text-white m-4 "
+          className="mb-4 text-white"
           controlId="formBasicPassword"
         >
           <Form.Label>Password</Form.Label>
@@ -102,10 +102,10 @@ const Login = () => {
           />
         </Form.Group>
 
-        <div className="text-center">
+        <div className="">
           <Button
             variant="light"
-            className="me-2 m-4 border-4 border-dark"
+            className="border-4 border-dark me-2"
             type="submit"
           >
             Login

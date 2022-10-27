@@ -110,7 +110,7 @@ const Register = () => {
           />
         </Form.Group>
         <Button
-          className="mb-4 me-2 align-item-start"
+          className="mb-4 mt-2 me-2 align-item-start"
           variant="light"
           type="submit"
           disabled={!accepted}
@@ -118,7 +118,7 @@ const Register = () => {
           Register
         </Button>
 
-        <Button className="mb-4 align-item-end" variant="warning">
+        <Button className="mb-4 mt-2 align-item-end" variant="warning">
           <Link to="/login">Login</Link>
         </Button>
         <Form.Text className=" mb-4 text-danger align-item-center me-2">
