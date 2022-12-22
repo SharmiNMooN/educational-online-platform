@@ -18,7 +18,7 @@ const CourseCard = ({ course }) => {
   } = course;
 
   return (
-    <Card className="mb-5" border="warning">
+    <Card className="mb-5">
       <Card.Header className="d-flex justify-content-between align-items-center">
         <div className="d-flex">
           <Image

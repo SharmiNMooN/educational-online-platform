@@ -67,18 +67,6 @@ const Header = () => {
             </Nav.Item>
           </Nav>
           <Nav>
-            <div className="me-2">
-              <BootstrapSwitchButton
-                checked={true}
-                size="sm"
-                onlabel="Light"
-                offlabel="Dark"
-                width="30px"
-                onstyle="info"
-                offstyle="dark"
-                style="border"
-              />
-            </div>
             <>
               {user?.uid ? (
                 <>
